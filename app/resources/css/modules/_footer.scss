@@ -1,0 +1,30 @@
+footer {
+	padding: 0 10px 20px;
+	font-size: 0.8em;
+	color: $grey-dark;
+
+	@media (min-width: 768px) {
+		border-top: solid 1px #ccc;
+		padding: 15px 20px;
+	}
+
+	a {
+		text-decoration: underline;
+		margin-right: 10px;
+
+		&:link,
+		&:visited {
+			color: $grey-dark;
+		}
+	}
+
+	span {
+		display: block;
+		margin-top: 10px;
+
+		@media (min-width: 768px) {
+			float: right;
+			margin: 0;
+		}
+	}
+}

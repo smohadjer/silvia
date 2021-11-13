@@ -1,0 +1,93 @@
+nav {
+	font-size: 0.9em;
+	box-sizing: border-box;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	overflow-y: auto;
+
+	@media (min-width: 768px) {
+		position: static;
+		text-align: right;
+		font-size: 1em;
+		display: block;
+		margin-right: 20px;
+		padding: 10px 0 50px;
+		width: auto;
+	}
+
+	@media (min-width: 1064px) {
+		width: 1024px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		@media (min-width: 768px) {
+			float: right;
+		}
+
+		li {
+			list-style: none;
+			margin-bottom: 0;
+
+			@media (min-width: 768px) {
+				float: left;
+				margin-left: 20px;
+			}
+
+			a:hover {
+				text-decoration: none;
+
+				@media (min-width: 768px) {
+					background: none;
+					color: $black;
+				}
+			}
+
+			&.selected a {
+				background: #ccc;
+				cursor: default;
+				text-decoration: none;
+
+				@media (min-width: 768px) {
+					background: none;
+					color: $black;
+					font-weight: bold;
+					text-decoration: none;
+					cursor: default;
+				}
+			}
+
+			&:not(.selected) a:hover {
+				@media (max-width: 767px) {
+					background: #e0e0e0;
+				}
+			}
+		}
+	}
+
+	a {
+		color: $grey-dark;
+		text-decoration: none;
+		display: block;
+		padding: 13px 10px 13px 15px;
+		border-bottom: solid 1px #aaa;
+		font-size: 1.1em;
+
+		@media (min-width: 768px) {
+			border: none;
+			padding: 15px 0;
+		}
+
+		&:link,
+		&:visited {
+			color: $grey-dark;
+		}
+	}
+}
