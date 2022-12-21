@@ -35,59 +35,56 @@ nav {
 		li {
 			list-style: none;
 			margin-bottom: 0;
+			cursor: default;
+			text-decoration: none;
 
 			@media (min-width: 768px) {
+				color: $black;
+				text-decoration: none;
+				cursor: default;
 				float: left;
 				margin-left: 20px;
 			}
 
-			a:hover {
-				text-decoration: none;
-
-				@media (min-width: 768px) {
-					background: none;
-					color: $black;
-				}
-			}
-
-			&.selected a {
+			span {
+				font-weight: bold;
 				background: #ccc;
-				cursor: default;
-				text-decoration: none;
 
 				@media (min-width: 768px) {
 					background: none;
-					color: $black;
-					font-weight: bold;
+				}
+			}
+
+			a, span {
+				padding: 13px 10px 13px 15px;
+				display: block;
+				font-size: 1.1em;
+				border-bottom: solid 1px #aaa;
+
+				@media (min-width: 768px) {
+					padding: 15px 0;
+					border: none;
+				}
+			}
+
+			a {
+				color: $grey-dark;
+				text-decoration: none;
+
+				&:hover {
 					text-decoration: none;
-					cursor: default;
+
+					@media (min-width: 768px) {
+						background: none;
+						color: $black;
+					}
+				}
+
+				&:link,
+				&:visited {
+					color: $grey-dark;
 				}
 			}
-
-			&:not(.selected) a:hover {
-				@media (max-width: 767px) {
-					background: #e0e0e0;
-				}
-			}
-		}
-	}
-
-	a {
-		color: $grey-dark;
-		text-decoration: none;
-		display: block;
-		padding: 13px 10px 13px 15px;
-		border-bottom: solid 1px #aaa;
-		font-size: 1.1em;
-
-		@media (min-width: 768px) {
-			border: none;
-			padding: 15px 0;
-		}
-
-		&:link,
-		&:visited {
-			color: $grey-dark;
 		}
 	}
 }

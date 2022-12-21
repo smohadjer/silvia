@@ -1,40 +1,33 @@
 {
 	"name": "silviamohadjer.de",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Website for Silvia Mohadjer",
 	"repository": {
 		"type": "git",
-		"url": "https://bitbucket.org/smohadjer/silviamohadjer.de"
+		"url": "https://github.com/smohadjer/silvia.git"
 	},
 	"license": "",
 	"scripts": {
-		"precopy": "node bin/clean.js",
-		"copy": "node bin/copytmp.js",
-		"sass": "node bin/sassTocss",
-		"hbs": "node bin/hbs.js",
-		"watch": "node bin/watch-css.js & node bin/watch-img.js ",
-		"serve": "npm run copy && npm run sass && npm run hbs",
-		"start": "npm run serve & npm run watch",
-		"build": "npm run serve && rollup -c && node bin/copydist.js && node bin/useref.js"
+		"precompile": "node node_modules/build/bin/clean.js",
+		"compile": "node node_modules/build/bin/compile.js",
+		"copy": "node node_modules/build/bin/copyPublic.js",
+		"copyDist": "node node_modules/build/bin/copydist.js",
+		"sass": "node node_modules/build/bin/sassTocss",
+		"hbs": "node node_modules/build/bin/hbs.js",
+		"watch": "node node_modules/build/bin/watch-content.js & node node_modules/build/bin/watch-css.js & node node_modules/build/bin/watch-js.js & node node_modules/build/bin/watch-img.js",
+		"serve": "npm run compile && npm run copy && npm run sass && npm run hbs",
+		"start": "npm run serve && npm run watch",
+		"build": "npm run serve && rollup -c && npm run copyDist"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.14.2",
-		"@babel/preset-env": "^7.15.8",
-		"@rollup/plugin-babel": "^5.3.0",
-		"chokidar": "3.5.1",
-		"concat": "^1.0.3",
-		"fs-extra": "^8.1.0",
-		"handlebars": "^4.7.7",
-		"rimraf": "latest",
-		"rollup": "^2.48.0",
-		"sass": "^1.43.4",
-		"useref": "^1.4.3"
+		"build": "git://github.com/smohadjer/build.git#0.1.1",
+		"handlebars": "^4.7.7"
 	},
 	"dependencies": {
 		"hamburgers": "0.9.3",
 		"helpers": "git+https://github.com/smohadjer/helpers.git"
 	},
 	"engines": {
-		"node": "16.13.0"
+		"node": ">=16.13.0"
 	}
 }

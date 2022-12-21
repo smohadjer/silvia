@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="de">
+	<head>
+    {{> partials/meta }}
+    {{> partials/styles }}
+	</head>
+	<body>
+    <div id="overall-wrapper">
+	    {{> partials/header pageId=this.pageId }}
+       <div class="content {{this.pageId}}">
+         <div id="menu"><span>Menu</span></div>
+          <header>
+            <p><span>Dipl.-Psych.</span> Silvia Mohadjer-Chouaf</p>
+            <h1>Psychologische Psychotherapeutin <span>und</span> Psychoanalytikerin (DGPT) in Freiburg</h1>
+          </header>
+        {{> content }}
+        {{> partials/footer }}
+      </div>
+    </div>
+    {{> partials/scripts }}
+	</body>
+</html>

@@ -5,7 +5,6 @@
 			"node_modules/helpers/dist/helper.css"
 		],
 		"js": [
-			"node_modules/handlebars/dist/handlebars.runtime.js"
 		]
 	}
 }
