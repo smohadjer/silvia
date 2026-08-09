@@ -4,7 +4,12 @@
 			"node_modules/hamburgers/dist/hamburgers.css",
 			"node_modules/helpers/dist/helper.css"
 		],
-		"js": [
-		]
-	}
+		"js": []
+	},
+	"pages": [
+		{
+			"source": "app/content",
+			"target": "public"
+		}
+	]
 }

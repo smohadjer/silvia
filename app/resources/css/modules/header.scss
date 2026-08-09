@@ -51,7 +51,7 @@ header {
 		margin: 0;
 		font-size: 0.85em;
 		line-height: 1.25em;
-		color: $black;
+		color: var(--black);
 		font-weight: normal;
 
 		@media (min-width: 768px) {
@@ -64,7 +64,7 @@ header {
 
 			span:before {
 				content: "|";
-				color: $grey;
+				color: var(--grey);
 				vertical-align: 1px;
 				font-size: 18px;
 			}

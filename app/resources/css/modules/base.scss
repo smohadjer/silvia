@@ -31,11 +31,11 @@ a {
 	text-decoration: none;
 
 	&:link {
-		color: $blue;
+		color: var(--blue);
 	}
 
 	&:visited {
-		color: $visited;
+		color: var(--visited);
 	}
 
 	&:hover {
