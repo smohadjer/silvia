@@ -42,9 +42,13 @@ form {
 
     &.row--two-columns {
       :is(label) {
-        display: inline-block;
-        min-width: 200px;
+        display: block;
         vertical-align: top;
+
+        @media (min-width: 768px) {
+          display: inline-block;
+          min-width: 200px;
+        }
       }
 
       :is(input) {

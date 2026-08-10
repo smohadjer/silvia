@@ -65,7 +65,7 @@ export default async function handler(req: Request, res: Response) {
     selbstzahler: 'Selbstzahler'
   };
 
-  if (!firstName || !lastName || !birthday || !EMAIL_PATTERN.test(email) || !insuranceLabels[insurance] || !message || !privacyAccepted) {
+  if (!firstName || !lastName || !EMAIL_PATTERN.test(email) || !insuranceLabels[insurance] || !message || !privacyAccepted) {
     return res.status(400).json({
       error: 'Bitte füllen Sie alle Pflichtfelder korrekt aus.'
     });
@@ -90,7 +90,7 @@ export default async function handler(req: Request, res: Response) {
   const text = [
     `Vorname: ${firstName}`,
     `Nachname: ${lastName}`,
-    `Geburtsdatum: ${birthday}`,
+    `Geburtsdatum: ${birthday || 'Nicht angegeben'}`,
     `E-Mail: ${email}`,
     `Telefon: ${phone || 'Nicht angegeben'}`,
     `Krankenversicherung: ${insuranceLabels[insurance]}`,
