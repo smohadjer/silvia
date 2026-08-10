@@ -245,6 +245,9 @@ form :is(textarea) {
 form :is(input)[type=checkbox] {
   margin: 3px 6px 0 0;
 }
+form :is(input)[type=date] {
+  min-height: 2em;
+}
 form :is(button) {
   font-size: 18px;
   background: var(--blue);
