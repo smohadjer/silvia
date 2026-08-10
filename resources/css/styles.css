@@ -4,7 +4,7 @@
 :root {
   --white: #fff;
   --black: #000;
-  --blue: #06c;
+  --blue: rgb(20, 94, 169);
   --grey: #999;
   --grey-dark: #666;
   --visited: #785598;
@@ -23,7 +23,13 @@ body {
     background: #fff;
   }
 }
-h4,
+@media (min-width: 1240px) {
+  body {
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+}
+h3,
 p,
 ul,
 h2 {
@@ -31,6 +37,9 @@ h2 {
 }
 p:first-child {
   margin-top: 5px;
+}
+p {
+  max-width: 100ch;
 }
 @media (min-width: 768px) {
   h2 {
@@ -74,20 +83,20 @@ dt,
 li {
   line-height: 1.35em;
 }
-h4 {
+h3 {
   font-size: 1.2em;
   margin-top: 30px;
 }
 @media (min-width: 768px) {
-  h4 {
+  h3 {
     font-size: 1.3em;
   }
 }
-h4 + * {
+h3 + * {
   margin-top: 5px;
 }
 @media (min-width: 768px) {
-  h4 + * {
+  h3 + * {
     margin-top: 10px;
   }
 }
@@ -115,22 +124,12 @@ h4 + * {
     padding: 15px 10px;
     color: var(--white);
     background: #666;
+    border: 0;
     font-size: 1.1em;
     cursor: pointer;
     display: block;
-  }
-  #menu span {
-    font-weight: bold;
-    padding-left: 7px;
-    background: url('data:image/svg+xml,<?xml version=\'1.0\' encoding=\'iso-8859-1\'?>%0A<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24">%0A  <g fill="%23ffffff">%0A    <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z"/>%0A    <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z"/>%0A    <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z"/>%0A  </g>%0A</svg>%0A') no-repeat;
-    background-size: 20px 20px;
-    padding-left: 30px;
-  }
-  .off-left #menu span {
-    background-image: url('data:image/svg+xml,<?xml version="1.0" encoding="iso-8859-1"?>%0D%0A<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->%0D%0A<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">%0D%0A<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"%0D%0A%09 width="95.939px" height="95.939px" viewBox="0 0 95.939 95.939" xml:space="preserve">%0D%0A%09<path fill="%23ffffff" d="M62.819,47.97l32.533-32.534c0.781-0.781,0.781-2.047,0-2.828L83.333,0.586C82.958,0.211,82.448,0,81.919,0%0D%0A%09%09c-0.53,0-1.039,0.211-1.414,0.586L47.97,33.121L15.435,0.586c-0.75-0.75-2.078-0.75-2.828,0L0.587,12.608%0D%0A%09%09c-0.781,0.781-0.781,2.047,0,2.828L33.121,47.97L0.587,80.504c-0.781,0.781-0.781,2.047,0,2.828l12.02,12.021%0D%0A%09%09c0.375,0.375,0.884,0.586,1.414,0.586c0.53,0,1.039-0.211,1.414-0.586L47.97,62.818l32.535,32.535%0D%0A%09%09c0.375,0.375,0.884,0.586,1.414,0.586c0.529,0,1.039-0.211,1.414-0.586l12.02-12.021c0.781-0.781,0.781-2.048,0-2.828L62.819,47.97%0D%0A%09%09z"/>%0D%0A</svg>%0D%0A');
-    background-size: 16px;
-    background-position: 0 1px;
-    padding-left: 24px;
+    text-align: left;
+    width: 100%;
   }
   .off-left {
     background: #eee;
@@ -148,16 +147,15 @@ article {
 }
 @media (min-width: 768px) {
   article {
-    width: 70%;
     margin-left: 20px;
+    margin-right: 20px;
   }
 }
-@media (min-width: 1064px) {
+@media (min-width: 1240px) {
   article {
-    width: 1024px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 300px;
   }
 }
 article:last-of-type {
@@ -175,8 +173,8 @@ article ul {
 article ul li {
   margin-left: 18px;
 }
-article h4 + details {
-  margin-top: 10px;
+article h3 + details {
+  margin-top: 0;
 }
 article h3 {
   margin-bottom: 0;
@@ -185,22 +183,54 @@ article h3 {
 article h3 + p {
   margin-top: 8px;
 }
-article details summary {
+.ueber-mich article > section {
+  margin-top: 30px;
+}
+
+/* app/resources/css/modules/accordion.css */
+.accordion {
+  border-bottom: solid 1px #ccc;
+}
+.accordion:last-of-type {
+  border-bottom: 0;
+}
+.accordion :is(summary) {
   cursor: pointer;
-  margin-top: 12px;
-  outline: none;
-  padding-left: 18px;
-  text-indent: -18px;
-  font-weight: bold;
+  padding: 0.5em 0;
+  font-weight: 500;
+  font-size: 18px;
+  list-style-type: none;
+  color: var(--blue);
+  padding-left: 25px;
+  text-indent: -25px;
 }
-article details summary + p {
-  margin-top: 5px;
+.accordion :is(summary)::-webkit-details-marker {
+  display: none;
 }
-article details summary ~ p {
-  margin-left: 18px;
+.accordion :is(summary) > * {
+  display: inline;
+  margin: 0;
 }
-article details *:last-child {
-  margin-bottom: 20px;
+.accordion :is(summary)::before {
+  content: "";
+  background: url('data:image/svg+xml,<?xml version="1.0" encoding="iso-8859-1"?>%0D%0A<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->%0D%0A<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">%0D%0A<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"%0D%0A%09 width="284.929px" height="284.929px" viewBox="0 0 284.929 284.929" xml:space="preserve">%0D%0A%09<path fill="%230066cc" d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441%0D%0A%09%09L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082%0D%0A%09%09c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647%0D%0A%09%09c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>%0D%0A</svg>%0D%0A') no-repeat;
+  background-size: 18px;
+  background-position: center;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 5px;
+  transition: all 0.25s;
+}
+.accordion[open] summary::before {
+  transform: rotate(180deg);
+}
+.accordion :is(.accordion__content) {
+  padding-bottom: 1em;
+}
+.accordion :is(.accordion__content) > *:first-child {
+  margin-top: 0;
 }
 
 /* app/resources/css/modules/featured.scss */
@@ -354,9 +384,9 @@ nav {
     width: auto;
   }
 }
-@media (min-width: 1064px) {
+@media (min-width: 1240px) {
   nav {
-    width: 1024px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -427,46 +457,45 @@ nav ul li a:visited {
 }
 
 /* app/resources/css/modules/hamburger.css */
-.no-js header .hamburger {
+.no-js .hamburger {
   display: none;
 }
-header .hamburger {
+.hamburger {
   vertical-align: middle;
-  padding: 0;
   touch-action: manipulation;
 }
-header .hamburger:focus {
+.hamburger:focus {
   outline: none;
 }
-header .hamburger:hover {
+.hamburger:hover {
   opacity: 1;
 }
 @media (min-width: 768px) {
-  header .hamburger {
+  .hamburger {
     display: none;
   }
 }
-header .hamburger .hamburger-inner,
-header .hamburger .hamburger-inner::before,
-header .hamburger .hamburger-inner::after {
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
   border-radius: 0;
 }
-header .hamburger .hamburger-box {
+.hamburger .hamburger-box {
   width: 30px;
   display: block;
 }
-header .hamburger .hamburger-inner,
-header .hamburger .hamburger-inner::before,
-header .hamburger .hamburger-inner::after {
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
   width: 30px;
   height: 3px;
-  background-color: black;
+  background-color: var(--white);
 }
 
 /* app/resources/css/modules/footer.scss */
 footer {
-  padding: 0 10px 20px;
-  font-size: 0.8em;
+  padding: 0 10px 30px;
+  font-size: 0.9em;
   color: var(--grey-dark);
 }
 @media (min-width: 768px) {
@@ -475,13 +504,21 @@ footer {
     padding: 15px 20px;
   }
 }
+@media (min-width: 1240px) {
+  footer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 0 25px;
+  }
+}
 footer a {
   text-decoration: underline;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 footer a:link,
 footer a:visited {
-  color: var(--grey-dark);
+  color: var(--blue);
 }
 footer span {
   display: block;
