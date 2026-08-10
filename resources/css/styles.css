@@ -273,9 +273,14 @@ form .row.required > .insurance-options__label::after {
   margin-left: 2px;
 }
 form .row.row--two-columns :is(label) {
-  display: inline-block;
-  min-width: 200px;
+  display: block;
   vertical-align: top;
+}
+@media (min-width: 768px) {
+  form .row.row--two-columns :is(label) {
+    display: inline-block;
+    min-width: 200px;
+  }
 }
 form .row.row--two-columns :is(input) {
   width: 100%;
