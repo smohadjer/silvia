@@ -85,6 +85,7 @@ li {
 }
 h3 {
   font-size: 1.2em;
+  line-height: 1.35em;
   margin-top: 30px;
 }
 @media (min-width: 768px) {
@@ -199,6 +200,7 @@ article h3 + p {
   padding: 0.5em 0;
   font-weight: 500;
   font-size: 18px;
+  line-height: 22px;
   list-style-type: none;
   color: var(--blue);
   padding-left: 25px;
@@ -267,7 +269,6 @@ form .row {
   margin-top: 12px;
 }
 form .row.required > label::after,
-form .row.required > legend::after,
 form .row.required > .insurance-options__label::after {
   content: "*";
   margin-left: 2px;
