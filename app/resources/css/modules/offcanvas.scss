@@ -25,25 +25,12 @@
 		padding: 15px 10px;
 		color: var(--white);
 		background: #666;
+		border: 0;
 		font-size: 1.1em;
 		cursor: pointer;
 		display: block;
-
-		span {
-			font-weight: bold;
-			padding-left: 7px;
-
-			background: url(../../img/menu.svg) no-repeat;
-			background-size: 20px 20px;
-			padding-left: 30px;
-
-			.off-left & {
-				background-image: url(../../img/cross.svg);
-				background-size: 16px;
-				background-position: 0 1px;
-				padding-left: 24px;
-			}
-		}
+		text-align: left;
+		width: 100%;
 	}
 
 	.off-left {

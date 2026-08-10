@@ -1,10 +1,9 @@
-.no-js header .hamburger {
+.no-js .hamburger {
   display: none;
 }
 
-header .hamburger {
+.hamburger {
 	vertical-align: middle;
-	padding: 0;
 	touch-action: manipulation; /* to avoid zooming on iphone when double clicking menu button */
 
 	&:focus {
@@ -30,9 +29,9 @@ header .hamburger {
 
   .hamburger-inner,
   .hamburger-inner::before,
-  .hamburger-inner::after {
+	.hamburger-inner::after {
     width: 30px;
 		height: 3px;
-		background-color: black;
+		background-color: var(--white);
   }
 }

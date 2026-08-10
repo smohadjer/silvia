@@ -5,9 +5,14 @@ body {
 	@media (min-width: 768px) {
 		background: #fff;
 	}
+
+	@media (min-width: 1240px) {
+		font-size: 1.1em;
+		line-height: 1.5em;
+	}
 }
 
-h4, p, ul, h2 {
+h3, p, ul, h2 {
 	margin-bottom: 0;
 }
 
@@ -15,6 +20,8 @@ p {
 	&:first-child {
 		margin-top: 5px;
 	}
+
+	max-width: 100ch;
 }
 
 h2 {
@@ -67,7 +74,7 @@ h2, p, dd, dt, li {
 	line-height: 1.35em;
 }
 
-h4 {
+h3 {
 	font-size: 1.2em;
 	margin-top: 30px;
 
