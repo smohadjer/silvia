@@ -4,7 +4,9 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type ContactPayload = {
   company_website?: unknown;
-  name?: unknown;
+  first_name?: unknown;
+  last_name?: unknown;
+  birthday?: unknown;
   email?: unknown;
   phone?: unknown;
   insurance?: unknown;
@@ -49,7 +51,9 @@ export default async function handler(req: Request, res: Response) {
     return res.status(200).json({ message: 'Ihre Nachricht wurde erfolgreich gesendet.' });
   }
 
-  const name = getString(payload.name, 120);
+  const firstName = getString(payload.first_name, 100);
+  const lastName = getString(payload.last_name, 100);
+  const birthday = getString(payload.birthday, 10);
   const email = getString(payload.email, 254).toLowerCase();
   const phone = getString(payload.phone, 60);
   const insurance = getString(payload.insurance, 20);
@@ -61,7 +65,7 @@ export default async function handler(req: Request, res: Response) {
     selbstzahler: 'Selbstzahler'
   };
 
-  if (!name || !EMAIL_PATTERN.test(email) || !insuranceLabels[insurance] || !message || !privacyAccepted) {
+  if (!firstName || !lastName || !birthday || !EMAIL_PATTERN.test(email) || !insuranceLabels[insurance] || !message || !privacyAccepted) {
     return res.status(400).json({
       error: 'Bitte füllen Sie alle Pflichtfelder korrekt aus.'
     });
@@ -84,7 +88,9 @@ export default async function handler(req: Request, res: Response) {
   });
 
   const text = [
-    `Name: ${name}`,
+    `Vorname: ${firstName}`,
+    `Nachname: ${lastName}`,
+    `Geburtsdatum: ${birthday}`,
     `E-Mail: ${email}`,
     `Telefon: ${phone || 'Nicht angegeben'}`,
     `Krankenversicherung: ${insuranceLabels[insurance]}`,
@@ -98,7 +104,7 @@ export default async function handler(req: Request, res: Response) {
       from: user,
       to: recipient,
       replyTo: email,
-      subject: `Kontaktanfrage von ${name}`,
+      subject: `Kontaktanfrage von ${firstName} ${lastName}`,
       text
     });
 

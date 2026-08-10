@@ -11,6 +11,10 @@ form {
     margin: 3px 6px 0 0;
   }
 
+  :is(input)[type="date"] {
+    min-height: 2em;
+  }
+
   :is(button) {
     font-size: 18px;
     background: var(--blue);
