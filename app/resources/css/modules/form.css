@@ -1,0 +1,151 @@
+form {
+  margin-top: 20px;
+
+  :is(input),
+  :is(textarea) {
+    font: inherit;
+    font-size: 16px;
+  }
+
+  :is(input)[type="checkbox"] {
+    margin: 3px 6px 0 0;
+  }
+
+  :is(button) {
+    font-size: 18px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    margin: 20px 0;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      padding: 10px 20px;
+    }
+  }
+
+  .row {
+    display: block;
+    margin-top: 12px;
+
+    &.required > label::after,
+    &.required > legend::after,
+    &.required > .insurance-options__label::after {
+      content: "*";
+      margin-left: 2px;
+    }
+
+    &.row--two-columns {
+      :is(label) {
+        display: inline-block;
+        min-width: 200px;
+        vertical-align: top;
+      }
+
+      :is(input) {
+        width: 100%;
+        border: solid 1px #999;
+        border-radius: 0;
+        margin-top: 5px;
+        padding: 8px;
+        box-sizing: border-box;
+
+        @media (min-width: 768px) {
+          margin-top: 0;
+          width: auto;
+          min-width: 320px;
+        }
+      }
+    }
+
+    :is(textarea) {
+      border: solid 1px #999;
+      border-radius: 0;
+      box-sizing: border-box;
+      margin-top: 5px;
+      padding: 8px;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+        max-width: 650px;
+      }
+    }
+
+    &.consent {
+      display: flex;
+      align-items: flex-start;
+      max-width: 650px;
+
+      :is(input) {
+        flex: 0 0 auto;
+        margin: 4px 8px 0 0;
+      }
+
+      :is(label) {
+        flex: 1;
+        line-height: 1.35em;
+      }
+
+    }
+
+    &.insurance-options {
+      .insurance-options__label {
+        margin-bottom: 6px;
+      }
+
+      .insurance-options__choices {
+        display: flex;
+        gap: 16px;
+        white-space: nowrap;
+      }
+
+      :is(label) {
+        line-height: 1.5em;
+      }
+
+      :is(input) {
+        margin: 0 4px 0 0;
+      }
+
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 205px auto;
+
+        .insurance-options__label {
+          margin-bottom: 0;
+          min-width: 200px;
+        }
+      }
+    }
+  }
+}
+
+.honeypot {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+.form-status {
+  border-left: solid 4px var(--blue);
+  margin-top: 20px;
+  padding: 10px 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-error {
+  color: #b00020;
+  margin: 16px 0 0;
+
+  &:focus {
+    outline: none;
+  }
+}

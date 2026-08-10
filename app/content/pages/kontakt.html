@@ -13,4 +13,44 @@
 	<p>Bitte rufen Sie mich zur Terminvereinbarung persönlich an.</p>
 	<h3>Telefonische Erreichbarkeit</h3>
 	<p>Am besten erreichen Sie die Praxis jeweils <strong>dienstags und donnerstags</strong> zwischen <strong>10:00</strong> und <strong>12:00 Uhr</strong>. Ansonsten bin ich in der Regel montags und freitags in den 10 min. vor der vollen Stunde zwischen 11:00 - 18:00 Uhr telefonisch erreichbar.</p>
+	<h3>Kontaktformular</h3>
+	<p>Sie können mir auch eine Nachricht per E-Mail senden. Bitte übermitteln Sie keine vertraulichen Gesundheitsdaten oder Angaben zu Beschwerden und Diagnosen.</p>
+	<form id="contact-form" action="/api/contact" method="post" accept-charset="UTF-8">
+		<p>Mit <strong>*</strong> gekennzeichnete Felder sind Pflichtfelder.</p>
+		<div class="honeypot" aria-hidden="true">
+			<label for="company-website">Website</label>
+			<input id="company-website" name="company_website" type="text" tabindex="-1" autocomplete="off" />
+		</div>
+		<div class="row row--two-columns required">
+			<label for="name">Name</label>
+			<input id="name" name="name" type="text" autocomplete="name" maxlength="120" required />
+		</div>
+		<div class="row row--two-columns required">
+			<label for="email">E-Mail</label>
+			<input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
+		</div>
+		<div class="row row--two-columns">
+			<label for="phone">Telefon</label>
+			<input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="60" />
+		</div>
+		<div class="row required insurance-options" role="radiogroup" aria-labelledby="insurance-label">
+			<span id="insurance-label" class="insurance-options__label">Krankenversicherung</span>
+			<div class="insurance-options__choices">
+				<label><input name="insurance" type="radio" value="gesetzlich" required /> Gesetzlich</label>
+				<label><input name="insurance" type="radio" value="privat" /> Privat</label>
+				<label><input name="insurance" type="radio" value="selbstzahler" /> Selbstzahler</label>
+			</div>
+		</div>
+		<div class="row row--two-columns required">
+			<label for="message">Nachricht</label>
+			<textarea id="message" name="message" rows="8" maxlength="5000" required></textarea>
+		</div>
+		<div class="row required consent">
+			<input id="privacy" name="privacy" type="checkbox" value="true" required />
+			<label for="privacy">Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</label>
+		</div>
+		<p id="contact-form-error" class="form-error" role="alert" tabindex="-1" hidden></p>
+		<button type="submit">Nachricht senden</button>
+	</form>
+	<p id="contact-form-status" class="form-status" role="status" tabindex="-1" hidden></p>
 </article>

@@ -111,4 +111,41 @@ ready(function() {
 	document.querySelectorAll('.accordion').forEach(function(element) {
 		new Accordion(element);
 	});
+
+	var contactForm = document.querySelector('#contact-form');
+	var contactFormStatus = document.querySelector('#contact-form-status');
+	var contactFormError = document.querySelector('#contact-form-error');
+
+	if (contactForm && contactFormStatus && contactFormError) {
+		contactForm.addEventListener('submit', async function(event) {
+			event.preventDefault();
+			var submitButton = contactForm.querySelector('button[type="submit"]');
+			submitButton.disabled = true;
+			contactFormStatus.hidden = true;
+			contactFormError.hidden = true;
+
+			try {
+				var response = await fetch(contactForm.action, {
+					method: contactForm.method,
+					body: new URLSearchParams(new FormData(contactForm)),
+					headers: { Accept: 'application/json' }
+				});
+				var result = await response.json();
+
+				if (!response.ok) {
+					throw new Error(result.error || 'Die Nachricht konnte nicht gesendet werden.');
+				}
+
+				contactForm.hidden = true;
+				contactFormStatus.textContent = result.message || 'Ihre Nachricht wurde erfolgreich gesendet.';
+				contactFormStatus.hidden = false;
+				contactFormStatus.focus();
+			} catch (error) {
+				contactFormError.textContent = error.message || 'Die Nachricht konnte nicht gesendet werden.';
+				contactFormError.hidden = false;
+				contactFormError.focus();
+				submitButton.disabled = false;
+			}
+		});
+	}
 });
