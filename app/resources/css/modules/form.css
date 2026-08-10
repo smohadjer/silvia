@@ -34,7 +34,6 @@ form {
     margin-top: 12px;
 
     &.required > label::after,
-    &.required > legend::after,
     &.required > .insurance-options__label::after {
       content: "*";
       margin-left: 2px;

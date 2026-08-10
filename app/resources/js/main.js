@@ -7,7 +7,7 @@ html.classList.add('js');
 function ready(fn) {
 	'use strict';
 
-	if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+	if (document.readyState !== 'loading') {
 		fn();
 	} else {
 		document.addEventListener('DOMContentLoaded', fn);
@@ -95,8 +95,6 @@ class Accordion {
 
 ready(function() {
 	'use strict';
-
-	console.log('DOM is ready!');
 
   var menu = document.querySelector('#menu');
   var wrapper = document.querySelector('#overall-wrapper');
